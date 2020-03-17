@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="cs122bg36@columbo-v5.ics.uci.edu" uuid="dfc2c168-8fb2-475e-94e3-1bd24eb74f5b">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://columbo-v5.ics.uci.edu:3306/cs122bg36</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="cs122bg36@matt-smith-v4.ics.uci.edu" uuid="7377d801-214c-4be5-9368-8934557ed7d9">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://matt-smith-v4.ics.uci.edu:3306/cs122bg36</jdbc-url>
+    </data-source>
+  </component>
+</project>

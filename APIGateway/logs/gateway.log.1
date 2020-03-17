@@ -1,0 +1,55 @@
+[2020/03/04 00:23:00][CONFIG][initService]  Starting service...
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Scheme: http://
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Hostname: 0.0.0.0
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Port: 12345
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Path: /api/g
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Logger output directory: ./logs/
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Database hostname: adrian-monk-v10.ics.uci.edu
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Database port: 3306
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Database username: cs122bg36
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Database password provided? true
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Database name: cs122bg36
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Database driver: com.mysql.cj.jdbc.Driver
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Database connection settings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  IDM Scheme: http://
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  IDM Hostname: 0.0.0.0
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  IDM Port: 1234
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  IDM Path: /api/idm
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  IDM Endpoints: 
+	/register
+	/login
+	/session
+	/privilege
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Movies Scheme: http://
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Movies Hostname: 0.0.0.0
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Movies Port: 5432
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Movies Path: /api/movies
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Movies Endpoints: 
+	/search
+	/browse/
+	/get/
+	/thumbnail
+	/people
+	/people/search
+	/people/get/
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Billing Scheme: http://
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Billing Hostname: 0.0.0.0
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Billing Port: 8510
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Billing Path: /api/billing
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Billing Endpoints: 
+	/cart/insert
+	/cart/update
+	/cart/delete
+	/cart/retrieve
+	/cart/clear
+	/order/place
+	/order/retrieve
+	/order/complete
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Number of Threads: 10
+[2020/03/04 00:23:00][CONFIG][currentConfigs]  Request Delay: 5
+[2020/03/04 00:23:01][CONFIG][initHTTPServer]  Initializing HTTP server...
+[2020/03/04 00:23:01][CONFIG][initHTTPServer]  Building URI from configs...
+[2020/03/04 00:23:01][CONFIG][initHTTPServer]  Final URI: http://0.0.0.0:12345/api/g
+[2020/03/04 00:23:01][CONFIG][initHTTPServer]  Set Jersey resources.
+[2020/03/04 00:23:01][CONFIG][initHTTPServer]  Set Jackson as serializer.
+[2020/03/04 00:23:01][CONFIG][initHTTPServer]  Starting HTTP server...

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a2d53983-8897-441e-b868-2fd20354186b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/core/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/core/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/query/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/query/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/resources/ReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/resources/ReportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/threadpool/ThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/threadpool/ThreadPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/threadpool/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uci/ics/sidneyjt/service/gateway/threadpool/Worker.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YFMwXLunWKR7VEMp6fbRqojdA2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2d53983-8897-441e-b868-2fd20354186b" name="Default Changelist" comment="" />
+      <created>1582534128617</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582534128617</updated>
+      <workItem from="1582534133366" duration="62416000" />
+      <workItem from="1583269074101" duration="52000" />
+      <workItem from="1583271399007" duration="4336000" />
+      <workItem from="1583309181474" duration="172000" />
+      <workItem from="1583309359985" duration="825000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582808975957">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="424" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1582808975957" />
+    <state x="1258" y="264" key="#com.intellij.ide.util.MemberChooser" timestamp="1582797489971">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1258" y="264" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1582797489971" />
+    <state x="630" y="374" key="com.intellij.ide.util.TipDialog" timestamp="1583309180462">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="630" y="374" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583309180462" />
+  </component>
+</project>

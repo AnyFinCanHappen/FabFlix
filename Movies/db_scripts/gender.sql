@@ -1,0 +1,1 @@
+INSERT IGNORE INTO gender VALUES (0, "Not Specified"), (1, "Female"), (2, "Male")

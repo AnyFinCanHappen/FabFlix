@@ -1,0 +1,583 @@
+[2020/03/05 20:35:48][CONFIG][initService]  Starting service...
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  Scheme: http://
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  Hostname: 0.0.0.0
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  Port: 1234
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  Path: /api/idm/
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  Logger output directory: ./logs/
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  dbUsername: cs122bg36
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  dbPassword: u7Neri2zMgPx.
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  dbHostname: matt-smith-v4.ics.uci.edu
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  dbPort: 3306
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  dbName: cs122bg36
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  dbDrivercom.mysql.cj.jdbc.Driver
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  dbSettings ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  timeout: 600000 ms.
+[2020/03/05 20:35:48][CONFIG][currentConfigs]  expiration: 1800000 ms.
+[2020/03/05 20:35:48][CONFIG][connectToDatabase]  Connecting to database...
+[2020/03/05 20:35:48][CONFIG][connectToDatabase]  Database URL: jdbc:mysql://matt-smith-v4.ics.uci.edu:3306/cs122bg36?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/03/05 20:35:48][CONFIG][connectToDatabase]  Connected to database: jdbc:mysql://matt-smith-v4.ics.uci.edu:3306/cs122bg36?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/03/05 20:35:48][CONFIG][initHTTPServer]  Initializing HTTP server...
+[2020/03/05 20:35:48][CONFIG][initHTTPServer]  Building URI from configs...
+[2020/03/05 20:35:48][CONFIG][initHTTPServer]  Final URI: http://0.0.0.0:1234/api/idm/
+[2020/03/05 20:35:48][CONFIG][initHTTPServer]  Set Jersey resources.
+[2020/03/05 20:35:48][CONFIG][initHTTPServer]  Set Jackson as serializer.
+[2020/03/05 20:35:48][CONFIG][initHTTPServer]  Set session timeout and token expiration.
+[2020/03/05 20:35:48][CONFIG][initHTTPServer]  Starting HTTP server...
+[2020/03/05 20:35:49][CONFIG][initHTTPServer]  HTTP server started.
+[2020/03/05 20:35:49][CONFIG][initService]  Service initialized.
+[2020/03/05 20:36:51][INFO][post]  Received post request
+[2020/03/05 20:36:51][INFO][post]  Request:
+{"email":"test1@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 20:36:51][INFO][post]  Valid Email.
+[2020/03/05 20:36:51][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id FROM user WHERE 1=1 && email LIKE 'test1@uci.edu';
+[2020/03/05 20:36:51][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 20:36:51][INFO][retrieveUserDB]  Email is not unique.
+[2020/03/05 20:36:51][WARNING][post]  Email already in use.
+[2020/03/05 20:37:17][INFO][post]  Received post request
+[2020/03/05 20:37:17][INFO][post]  Request:
+{"email":"test2@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 20:37:17][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, status FROM user WHERE 1=1 && email LIKE 'test2@uci.edu';
+[2020/03/05 20:37:17][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 20:37:17][INFO][retrieveUserDB]  Email found.
+[2020/03/05 20:37:17][INFO][post]  Status: 2
+[2020/03/05 20:37:17][INFO][checkPassword]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, salt, pword FROM user WHERE 1=1 && email LIKE 'test2@uci.edu';
+[2020/03/05 20:37:17][INFO][checkPassword]  Query succeeded.
+[2020/03/05 20:37:17][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 20:37:17][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 20:37:17][INFO][updateSession]  Trying Insert: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time)VALUES ('bd7b4b61e1dbe4a33c1b18edc0b41fa3989373963f0756a4fb63ef02eee04eb390e3348ce8863e67c7dbb60e3e5f9ede128b4e2ed9c2e947bc98667f6a9d15ea', 'test2@uci.edu', 1, '2020-03-05 20:37:17.644', '2020-03-05 20:37:17.644', '2020-03-05 21:07:17.644');
+[2020/03/05 20:37:17][INFO][updateSession]  Insert succeeded.
+[2020/03/05 20:37:17][INFO][updateUserStatus]  Trying to update into DB: com.mysql.cj.jdbc.ClientPreparedStatement:  UPDATE user SET status = 1 WHERE email LIKE 'test2@uci.edu';
+[2020/03/05 20:37:17][INFO][updateUserStatus]  Update succeeded.
+[2020/03/05 20:37:17][INFO][post]  User logged in successfully.
+[2020/03/05 20:38:24][INFO][post]  Received post request
+[2020/03/05 20:38:24][INFO][post]  Request:
+{"email":"test1@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 20:38:24][INFO][post]  Valid Email.
+[2020/03/05 20:38:24][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id FROM user WHERE 1=1 && email LIKE 'test1@uci.edu';
+[2020/03/05 20:38:24][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 20:38:24][INFO][retrieveUserDB]  Email is unique.
+[2020/03/05 20:38:24][INFO][post]  Password meets requirements
+[2020/03/05 20:38:24][INFO][post]  Successfully encoded password
+[2020/03/05 20:38:24][INFO][insertUser]  Trying to insert into DB: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO user(email, salt, pword, plevel, status) VALUES('test1@uci.edu', 'c2749c2e', 'c014d192772b1382b5eb46312515b2f6516c40b177376d9badefbc66c60f26f5c210aabbdc391b7c712bd60805d3fdf3dd44daa5c09b754e6cc99c0c8f36a767', 5, 2)
+[2020/03/05 20:38:24][INFO][insertUser]  Insert succeeded.
+[2020/03/05 20:38:24][INFO][post]  User registered successfully.
+[2020/03/05 20:38:29][INFO][post]  Received post request
+[2020/03/05 20:38:29][INFO][post]  Request:
+{"email":"test1@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 20:38:29][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, status FROM user WHERE 1=1 && email LIKE 'test1@uci.edu';
+[2020/03/05 20:38:30][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 20:38:30][INFO][retrieveUserDB]  Email found.
+[2020/03/05 20:38:30][INFO][post]  Status: 2
+[2020/03/05 20:38:30][INFO][checkPassword]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, salt, pword FROM user WHERE 1=1 && email LIKE 'test1@uci.edu';
+[2020/03/05 20:38:30][INFO][checkPassword]  Query succeeded.
+[2020/03/05 20:38:30][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 20:38:30][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 20:38:30][INFO][updateSession]  Trying Insert: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time)VALUES ('6abebe13a49ebab74b47290df90c58709d166d1c1464ce712a74634f94bdcbcfd525b41bc4bee0e22380f789038c1e076d4e46abbedb2600bf79b0001d7d6a68', 'test1@uci.edu', 1, '2020-03-05 20:38:30.057', '2020-03-05 20:38:30.057', '2020-03-05 21:08:30.057');
+[2020/03/05 20:38:30][INFO][updateSession]  Insert succeeded.
+[2020/03/05 20:38:30][INFO][updateUserStatus]  Trying to update into DB: com.mysql.cj.jdbc.ClientPreparedStatement:  UPDATE user SET status = 1 WHERE email LIKE 'test1@uci.edu';
+[2020/03/05 20:38:30][INFO][updateUserStatus]  Update succeeded.
+[2020/03/05 20:38:30][INFO][post]  User logged in successfully.
+[2020/03/05 20:38:53][INFO][post]  Received post request
+[2020/03/05 20:38:53][INFO][post]  Request:
+{"email":"test1@uci.edu","plevel":4}
+[2020/03/05 20:38:53][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test1@uci.edu';
+[2020/03/05 20:38:53][INFO][getUserData]  Query succeeded.
+[2020/03/05 20:38:53][INFO][getUserData]  Email found.
+[2020/03/05 20:38:53][INFO][post]  User has insufficient privilege level.
+[2020/03/05 20:39:28][INFO][post]  Received post request
+[2020/03/05 20:39:28][INFO][post]  Request:
+{"email":"test1@uci.edu","plevel":4}
+[2020/03/05 20:39:28][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test1@uci.edu';
+[2020/03/05 20:39:28][INFO][getUserData]  Query succeeded.
+[2020/03/05 20:39:28][INFO][getUserData]  Email found.
+[2020/03/05 20:39:28][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:05:45][INFO][post]  Received post request
+[2020/03/05 21:05:45][INFO][post]  Request:
+{"email":"test1@uci.edu","plevel":4}
+[2020/03/05 21:05:45][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test1@uci.edu';
+[2020/03/05 21:05:45][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:05:45][INFO][getUserData]  Email found.
+[2020/03/05 21:05:45][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:16:49][INFO][post]  Received post request
+[2020/03/05 21:16:49][INFO][post]  Request:
+{"email":"sidney@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 21:16:49][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, status FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:16:49][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 21:16:49][INFO][retrieveUserDB]  Email found.
+[2020/03/05 21:16:49][INFO][post]  Status: 1
+[2020/03/05 21:16:49][INFO][checkPassword]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, salt, pword FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:16:49][INFO][checkPassword]  Query succeeded.
+[2020/03/05 21:16:49][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 21:16:49][INFO][getSessionData]  Trying Query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT status, time_created, last_used, expr_time, session_id FROM session WHERE 1=1 && email LIKE 'sidney@uci.edu' && status = 1;
+[2020/03/05 21:16:49][INFO][getSessionData]  Query succeeded.
+[2020/03/05 21:16:49][INFO][updateSession]  Trying Update: com.mysql.cj.jdbc.ClientPreparedStatement: UPDATE session SET status = 4, time_created = '2020-03-05 03:39:18.0', last_used = '2020-03-05 03:39:18.0', expr_time =  '2020-03-05 04:09:18.0'WHERE 1=1 && email LIKE 'sidney@uci.edu' &&  session_id LIKE '353475f8fcf54a6c5f24a448e0b892514d003e5fbb55dc0eba97ddfd5a5e6594348c280c1f98e25cd7250b968d755c1b866ce15f0f028e8e09da4cd91341ad06';
+[2020/03/05 21:16:49][INFO][updateSession]  Update succeeded.
+[2020/03/05 21:16:49][INFO][updateUserStatus]  Trying to update into DB: com.mysql.cj.jdbc.ClientPreparedStatement:  UPDATE user SET status = 1 WHERE email LIKE 'sidney@uci.edu';
+[2020/03/05 21:16:49][INFO][updateUserStatus]  Update succeeded.
+[2020/03/05 21:16:49][INFO][insertSession]  Trying Insert: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time)VALUES ('b33742baff173956a5c26d6ec289e800657bc58477c1d8d19862bf221511c5e298b97adeb8273df83a8779fab39674cc2bdd61286e031391f82d9a61060e6736', 'sidney@uci.edu', 1, '2020-03-05 21:16:49.774', '2020-03-05 21:16:49.774', '2020-03-05 21:46:49.774');
+[2020/03/05 21:16:49][INFO][insertSession]  Insert succeeded.
+[2020/03/05 21:16:49][INFO][updateUserStatus]  Trying to update into DB: com.mysql.cj.jdbc.ClientPreparedStatement:  UPDATE user SET status = 1 WHERE email LIKE 'sidney@uci.edu';
+[2020/03/05 21:16:49][INFO][updateUserStatus]  Update succeeded.
+[2020/03/05 21:16:49][INFO][post]  User logged in successfully.
+[2020/03/05 21:17:49][INFO][post]  Received post request
+[2020/03/05 21:17:49][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:17:49][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:17:49][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:17:49][INFO][getUserData]  Email found.
+[2020/03/05 21:17:49][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:18:29][INFO][post]  Received post request
+[2020/03/05 21:18:29][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:18:29][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:18:29][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:18:29][INFO][getUserData]  Email found.
+[2020/03/05 21:18:29][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:18:43][INFO][post]  Received post request
+[2020/03/05 21:18:43][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:18:43][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:18:43][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:18:43][INFO][getUserData]  Email found.
+[2020/03/05 21:18:43][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:18:48][INFO][post]  Received post request
+[2020/03/05 21:18:48][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:18:48][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:18:48][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:18:48][INFO][getUserData]  Email found.
+[2020/03/05 21:18:48][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:32:41][INFO][post]  Received post request
+[2020/03/05 21:32:41][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:32:41][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:32:41][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:32:41][INFO][getUserData]  Email found.
+[2020/03/05 21:32:41][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:33:07][INFO][post]  Received post request
+[2020/03/05 21:33:07][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:33:07][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:33:07][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:33:07][INFO][getUserData]  Email found.
+[2020/03/05 21:33:07][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:33:08][INFO][post]  Received post request
+[2020/03/05 21:33:08][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:33:08][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:33:08][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:33:08][INFO][getUserData]  Email found.
+[2020/03/05 21:33:08][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:33:33][INFO][post]  Received post request
+[2020/03/05 21:33:33][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:33:33][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:33:33][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:33:33][INFO][getUserData]  Email found.
+[2020/03/05 21:33:33][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:33:48][INFO][post]  Received post request
+[2020/03/05 21:33:48][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:33:48][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:33:48][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:33:48][INFO][getUserData]  Email found.
+[2020/03/05 21:33:48][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:34:35][INFO][post]  Received post request
+[2020/03/05 21:34:35][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:34:35][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:34:35][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:34:35][INFO][getUserData]  Email found.
+[2020/03/05 21:34:35][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:34:53][INFO][post]  Received post request
+[2020/03/05 21:34:53][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:34:53][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:34:53][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:34:53][INFO][getUserData]  Email found.
+[2020/03/05 21:34:53][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:34:58][INFO][post]  Received post request
+[2020/03/05 21:34:58][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:34:58][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:34:58][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:34:58][INFO][getUserData]  Email found.
+[2020/03/05 21:34:58][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:35:05][INFO][post]  Received post request
+[2020/03/05 21:35:05][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:35:05][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:35:05][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:35:05][INFO][getUserData]  Email found.
+[2020/03/05 21:35:05][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:35:21][INFO][post]  Received post request
+[2020/03/05 21:35:21][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:35:21][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:35:21][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:35:21][INFO][getUserData]  Email found.
+[2020/03/05 21:35:21][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:35:37][INFO][post]  Received post request
+[2020/03/05 21:35:37][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:35:37][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:35:37][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:35:37][INFO][getUserData]  Email found.
+[2020/03/05 21:35:37][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:35:53][INFO][post]  Received post request
+[2020/03/05 21:35:53][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:35:53][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:35:53][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:35:53][INFO][getUserData]  Email found.
+[2020/03/05 21:35:53][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:37:34][INFO][post]  Received post request
+[2020/03/05 21:37:34][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:37:34][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:37:34][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:37:34][INFO][getUserData]  Email found.
+[2020/03/05 21:37:34][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:37:41][INFO][post]  Received post request
+[2020/03/05 21:37:41][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:37:41][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:37:41][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:37:41][INFO][getUserData]  Email found.
+[2020/03/05 21:37:41][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:42:38][INFO][post]  Received post request
+[2020/03/05 21:42:38][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:42:38][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:42:38][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:42:38][INFO][getUserData]  Email found.
+[2020/03/05 21:42:38][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:42:52][INFO][post]  Received post request
+[2020/03/05 21:42:52][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:42:52][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:42:52][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:42:52][INFO][getUserData]  Email found.
+[2020/03/05 21:42:52][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:43:08][INFO][post]  Received post request
+[2020/03/05 21:43:08][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:43:08][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:43:08][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:43:08][INFO][getUserData]  Email found.
+[2020/03/05 21:43:08][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:43:19][INFO][post]  Received post request
+[2020/03/05 21:43:19][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:43:19][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:43:19][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:43:19][INFO][getUserData]  Email found.
+[2020/03/05 21:43:19][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:43:34][INFO][post]  Received post request
+[2020/03/05 21:43:34][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:43:34][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:43:34][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:43:34][INFO][getUserData]  Email found.
+[2020/03/05 21:43:34][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:43:47][INFO][post]  Received post request
+[2020/03/05 21:43:47][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:43:47][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:43:47][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:43:47][INFO][getUserData]  Email found.
+[2020/03/05 21:43:47][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:43:57][INFO][post]  Received post request
+[2020/03/05 21:43:57][INFO][post]  Request:
+{"email":"sidney@uci.edu","plevel":4}
+[2020/03/05 21:43:57][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'sidney@uci.edu';
+[2020/03/05 21:43:57][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:43:57][INFO][getUserData]  Email found.
+[2020/03/05 21:43:57][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:48:26][INFO][post]  Received post request
+[2020/03/05 21:48:26][INFO][post]  Request:
+{"email":"test2@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 21:48:26][INFO][post]  Valid Email.
+[2020/03/05 21:48:26][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id FROM user WHERE 1=1 && email LIKE 'test2@uci.edu';
+[2020/03/05 21:48:26][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 21:48:26][INFO][retrieveUserDB]  Email is unique.
+[2020/03/05 21:48:26][INFO][post]  Password meets requirements
+[2020/03/05 21:48:26][INFO][post]  Successfully encoded password
+[2020/03/05 21:48:26][INFO][insertUser]  Trying to insert into DB: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO user(email, salt, pword, plevel, status) VALUES('test2@uci.edu', 'f2aa59db', '5cd47b4e696d4e77e2b3cff49791daa81277e4704722655c899f2910741ead39dc64088ad03e92934f387c0f8a5422f1c3898388c7def4eba14ad488131bda1f', 5, 2)
+[2020/03/05 21:48:26][INFO][insertUser]  Insert succeeded.
+[2020/03/05 21:48:26][INFO][post]  User registered successfully.
+[2020/03/05 21:48:31][INFO][post]  Received post request
+[2020/03/05 21:48:31][INFO][post]  Request:
+{"email":"test2@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 21:48:31][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, status FROM user WHERE 1=1 && email LIKE 'test2@uci.edu';
+[2020/03/05 21:48:31][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 21:48:31][INFO][retrieveUserDB]  Email found.
+[2020/03/05 21:48:31][INFO][post]  Status: 2
+[2020/03/05 21:48:31][INFO][checkPassword]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, salt, pword FROM user WHERE 1=1 && email LIKE 'test2@uci.edu';
+[2020/03/05 21:48:31][INFO][checkPassword]  Query succeeded.
+[2020/03/05 21:48:31][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 21:48:31][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 21:48:31][INFO][updateSession]  Trying Insert: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time)VALUES ('b0c0f01edcc00a7581498a05886a9d896e460811a0a305acff17d1f3c364fb50e71de0054ce73125b8b7c7bda4544e2d06d8911ab5986a8d85284965cb423ac4', 'test2@uci.edu', 1, '2020-03-05 21:48:31.929', '2020-03-05 21:48:31.929', '2020-03-05 22:18:31.929');
+[2020/03/05 21:48:31][INFO][updateSession]  Insert succeeded.
+[2020/03/05 21:48:31][INFO][updateUserStatus]  Trying to update into DB: com.mysql.cj.jdbc.ClientPreparedStatement:  UPDATE user SET status = 1 WHERE email LIKE 'test2@uci.edu';
+[2020/03/05 21:48:31][INFO][updateUserStatus]  Update succeeded.
+[2020/03/05 21:48:31][INFO][post]  User logged in successfully.
+[2020/03/05 21:48:57][INFO][post]  Received post request
+[2020/03/05 21:48:57][INFO][post]  Request:
+{"email":"test2@uci.edu","plevel":4}
+[2020/03/05 21:48:57][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test2@uci.edu';
+[2020/03/05 21:48:57][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:48:57][INFO][getUserData]  Email found.
+[2020/03/05 21:48:57][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:49:23][INFO][post]  Received post request
+[2020/03/05 21:49:23][INFO][post]  Request:
+{"email":"test2@uci.edu","plevel":4}
+[2020/03/05 21:49:23][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test2@uci.edu';
+[2020/03/05 21:49:23][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:49:23][INFO][getUserData]  Email found.
+[2020/03/05 21:49:23][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:49:35][INFO][post]  Received post request
+[2020/03/05 21:49:35][INFO][post]  Request:
+{"email":"test2@uci.edu","plevel":4}
+[2020/03/05 21:49:35][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test2@uci.edu';
+[2020/03/05 21:49:35][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:49:35][INFO][getUserData]  Email found.
+[2020/03/05 21:49:35][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:50:37][INFO][post]  Received post request
+[2020/03/05 21:50:37][INFO][post]  Request:
+{"email":"test3@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 21:50:37][INFO][post]  Valid Email.
+[2020/03/05 21:50:37][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:50:37][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 21:50:37][INFO][retrieveUserDB]  Email is unique.
+[2020/03/05 21:50:37][INFO][post]  Password meets requirements
+[2020/03/05 21:50:37][INFO][post]  Successfully encoded password
+[2020/03/05 21:50:37][INFO][insertUser]  Trying to insert into DB: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO user(email, salt, pword, plevel, status) VALUES('test3@uci.edu', 'fd7b5bb9', '431178dc03e57d7992b26262383b1d2736edd34bd1ca3f9ff8babf311cccc915fbed22894a00f71a8b53e0d0b6662c0e14a3d8740ce52de2f909d0a360e148e8', 5, 2)
+[2020/03/05 21:50:37][INFO][insertUser]  Insert succeeded.
+[2020/03/05 21:50:37][INFO][post]  User registered successfully.
+[2020/03/05 21:50:41][INFO][post]  Received post request
+[2020/03/05 21:50:41][INFO][post]  Request:
+{"email":"test3@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 21:50:41][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, status FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:50:41][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 21:50:41][INFO][retrieveUserDB]  Email found.
+[2020/03/05 21:50:41][INFO][post]  Status: 2
+[2020/03/05 21:50:41][INFO][checkPassword]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, salt, pword FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:50:41][INFO][checkPassword]  Query succeeded.
+[2020/03/05 21:50:41][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 21:50:41][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 21:50:41][INFO][updateSession]  Trying Insert: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time)VALUES ('6d61cc3be62c4e9d3ee08b155e81caaebac93aad140e6ed37228faeb53edeea2513db1360b6474b28e57b74d9d9d32771a13ba238db5afb6ad492c2556191702', 'test3@uci.edu', 1, '2020-03-05 21:50:41.662', '2020-03-05 21:50:41.662', '2020-03-05 22:20:41.662');
+[2020/03/05 21:50:41][INFO][updateSession]  Insert succeeded.
+[2020/03/05 21:50:41][INFO][updateUserStatus]  Trying to update into DB: com.mysql.cj.jdbc.ClientPreparedStatement:  UPDATE user SET status = 1 WHERE email LIKE 'test3@uci.edu';
+[2020/03/05 21:50:41][INFO][updateUserStatus]  Update succeeded.
+[2020/03/05 21:50:41][INFO][post]  User logged in successfully.
+[2020/03/05 21:50:54][INFO][post]  Received post request
+[2020/03/05 21:50:54][INFO][post]  Request:
+{"email":"test3@uci.edu","plevel":4}
+[2020/03/05 21:50:54][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:50:54][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:50:54][INFO][getUserData]  Email found.
+[2020/03/05 21:50:54][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:51:20][INFO][post]  Received post request
+[2020/03/05 21:51:20][INFO][post]  Request:
+{"email":"test3@uci.edu","plevel":4}
+[2020/03/05 21:51:20][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:51:20][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:51:20][INFO][getUserData]  Email found.
+[2020/03/05 21:51:20][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:51:32][INFO][post]  Received post request
+[2020/03/05 21:51:32][INFO][post]  Request:
+{"email":"test3@uci.edu","plevel":4}
+[2020/03/05 21:51:32][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:51:32][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:51:32][INFO][getUserData]  Email found.
+[2020/03/05 21:51:32][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:51:45][INFO][post]  Received post request
+[2020/03/05 21:51:45][INFO][post]  Request:
+{"email":"test3@uci.edu","plevel":4}
+[2020/03/05 21:51:45][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:51:45][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:51:45][INFO][getUserData]  Email found.
+[2020/03/05 21:51:45][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:52:04][INFO][post]  Received post request
+[2020/03/05 21:52:04][INFO][post]  Request:
+{"email":"test3@uci.edu","plevel":4}
+[2020/03/05 21:52:04][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:52:04][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:52:04][INFO][getUserData]  Email found.
+[2020/03/05 21:52:04][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:52:08][INFO][post]  Received post request
+[2020/03/05 21:52:08][INFO][post]  Request:
+{"email":"test3@uci.edu","plevel":4}
+[2020/03/05 21:52:08][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:52:08][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:52:08][INFO][getUserData]  Email found.
+[2020/03/05 21:52:08][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:52:19][INFO][post]  Received post request
+[2020/03/05 21:52:19][INFO][post]  Request:
+{"email":"test3@uci.edu","plevel":4}
+[2020/03/05 21:52:19][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:52:20][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:52:20][INFO][getUserData]  Email found.
+[2020/03/05 21:52:20][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:52:31][INFO][post]  Received post request
+[2020/03/05 21:52:31][INFO][post]  Request:
+{"email":"test3@uci.edu","plevel":4}
+[2020/03/05 21:52:31][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test3@uci.edu';
+[2020/03/05 21:52:31][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:52:31][INFO][getUserData]  Email found.
+[2020/03/05 21:52:31][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:57:27][INFO][post]  Received post request
+[2020/03/05 21:57:27][INFO][post]  Request:
+{"email":"test4@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 21:57:27][INFO][post]  Valid Email.
+[2020/03/05 21:57:27][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:57:27][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 21:57:27][INFO][retrieveUserDB]  Email is unique.
+[2020/03/05 21:57:27][INFO][post]  Password meets requirements
+[2020/03/05 21:57:28][INFO][post]  Successfully encoded password
+[2020/03/05 21:57:28][INFO][insertUser]  Trying to insert into DB: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO user(email, salt, pword, plevel, status) VALUES('test4@uci.edu', 'ca77f421', '182a85f92bb53854a3612c9d0f2bfb3148d1f6a3e583ae2e4820ae92fcd03b1c77bda3f1154987238c1c5a9c5befd76671e2224c91ab1450c99d15431f1e8dec', 5, 2)
+[2020/03/05 21:57:28][INFO][insertUser]  Insert succeeded.
+[2020/03/05 21:57:28][INFO][post]  User registered successfully.
+[2020/03/05 21:57:32][INFO][post]  Received post request
+[2020/03/05 21:57:32][INFO][post]  Request:
+{"email":"test4@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 21:57:32][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, status FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:57:32][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 21:57:32][INFO][retrieveUserDB]  Email found.
+[2020/03/05 21:57:32][INFO][post]  Status: 2
+[2020/03/05 21:57:32][INFO][checkPassword]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, salt, pword FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:57:32][INFO][checkPassword]  Query succeeded.
+[2020/03/05 21:57:32][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 21:57:32][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 21:57:32][INFO][updateSession]  Trying Insert: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time)VALUES ('7384e9efb8c64d9cc884cea28300155fb4deafdb61d8c0aee33df45b761490accb48257f6419d87665e536823158530a8b5ae9bcb3050b20ddb80d1b805636ff', 'test4@uci.edu', 1, '2020-03-05 21:57:32.282', '2020-03-05 21:57:32.282', '2020-03-05 22:27:32.282');
+[2020/03/05 21:57:32][INFO][updateSession]  Insert succeeded.
+[2020/03/05 21:57:32][INFO][updateUserStatus]  Trying to update into DB: com.mysql.cj.jdbc.ClientPreparedStatement:  UPDATE user SET status = 1 WHERE email LIKE 'test4@uci.edu';
+[2020/03/05 21:57:32][INFO][updateUserStatus]  Update succeeded.
+[2020/03/05 21:57:32][INFO][post]  User logged in successfully.
+[2020/03/05 21:57:57][INFO][post]  Received post request
+[2020/03/05 21:57:57][INFO][post]  Request:
+{"email":"test4@uci.edu","plevel":4}
+[2020/03/05 21:57:57][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:57:57][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:57:57][INFO][getUserData]  Email found.
+[2020/03/05 21:57:57][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:58:14][INFO][post]  Received post request
+[2020/03/05 21:58:14][INFO][post]  Request:
+{"email":"test4@uci.edu","plevel":4}
+[2020/03/05 21:58:14][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:58:14][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:58:14][INFO][getUserData]  Email found.
+[2020/03/05 21:58:14][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:58:30][INFO][post]  Received post request
+[2020/03/05 21:58:30][INFO][post]  Request:
+{"email":"test4@uci.edu","plevel":4}
+[2020/03/05 21:58:30][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:58:30][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:58:30][INFO][getUserData]  Email found.
+[2020/03/05 21:58:30][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:58:40][INFO][post]  Received post request
+[2020/03/05 21:58:40][INFO][post]  Request:
+{"email":"test4@uci.edu","plevel":4}
+[2020/03/05 21:58:40][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:58:40][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:58:40][INFO][getUserData]  Email found.
+[2020/03/05 21:58:40][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:58:59][INFO][post]  Received post request
+[2020/03/05 21:58:59][INFO][post]  Request:
+{"email":"test4@uci.edu","plevel":4}
+[2020/03/05 21:58:59][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:58:59][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:58:59][INFO][getUserData]  Email found.
+[2020/03/05 21:58:59][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:59:02][INFO][post]  Received post request
+[2020/03/05 21:59:02][INFO][post]  Request:
+{"email":"test4@uci.edu","plevel":4}
+[2020/03/05 21:59:02][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:59:02][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:59:02][INFO][getUserData]  Email found.
+[2020/03/05 21:59:02][INFO][post]  User has insufficient privilege level.
+[2020/03/05 21:59:12][INFO][post]  Received post request
+[2020/03/05 21:59:12][INFO][post]  Request:
+{"email":"test4@uci.edu","plevel":4}
+[2020/03/05 21:59:12][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test4@uci.edu';
+[2020/03/05 21:59:12][INFO][getUserData]  Query succeeded.
+[2020/03/05 21:59:12][INFO][getUserData]  Email found.
+[2020/03/05 21:59:12][INFO][post]  User has insufficient privilege level.
+[2020/03/05 22:05:43][INFO][post]  Received post request
+[2020/03/05 22:05:43][INFO][post]  Request:
+{"email":"test5@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 22:05:43][INFO][post]  Valid Email.
+[2020/03/05 22:05:43][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:05:43][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 22:05:43][INFO][retrieveUserDB]  Email is unique.
+[2020/03/05 22:05:43][INFO][post]  Password meets requirements
+[2020/03/05 22:05:43][INFO][post]  Successfully encoded password
+[2020/03/05 22:05:43][INFO][insertUser]  Trying to insert into DB: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO user(email, salt, pword, plevel, status) VALUES('test5@uci.edu', 'f48a456a', 'defb3dd7410979acd0d4d351b01e974c7e7923420b809e78f90ba7352f8a3d8a034f40816f28010002530afcc6f820e60b07cd4346531f5d9e4e5205b675a4d5', 5, 2)
+[2020/03/05 22:05:43][INFO][insertUser]  Insert succeeded.
+[2020/03/05 22:05:43][INFO][post]  User registered successfully.
+[2020/03/05 22:05:47][INFO][post]  Received post request
+[2020/03/05 22:05:47][INFO][post]  Request:
+{"email":"test5@uci.edu","password":["1","2","3","4","5","6","s","T"]}
+[2020/03/05 22:05:47][INFO][retrieveUserDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, status FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:05:47][INFO][retrieveUserDB]  Query succeeded.
+[2020/03/05 22:05:47][INFO][retrieveUserDB]  Email found.
+[2020/03/05 22:05:47][INFO][post]  Status: 2
+[2020/03/05 22:05:47][INFO][checkPassword]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, salt, pword FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:05:47][INFO][checkPassword]  Query succeeded.
+[2020/03/05 22:05:47][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 22:05:47][INFO][checkIfSessionExist]  Query succeeded (checkIfSessionExist).
+[2020/03/05 22:05:47][INFO][updateSession]  Trying Insert: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time)VALUES ('509f7d1fdabb6e5b3af93e328aec3f933526e15dcdf8ef222731d3cd0c9bd0781e68f3094c1e170e85b8ee438f90564ccf0270f5832bf855513fd34a6e3423e2', 'test5@uci.edu', 1, '2020-03-05 22:05:47.218', '2020-03-05 22:05:47.218', '2020-03-05 22:35:47.218');
+[2020/03/05 22:05:47][INFO][updateSession]  Insert succeeded.
+[2020/03/05 22:05:47][INFO][updateUserStatus]  Trying to update into DB: com.mysql.cj.jdbc.ClientPreparedStatement:  UPDATE user SET status = 1 WHERE email LIKE 'test5@uci.edu';
+[2020/03/05 22:05:47][INFO][updateUserStatus]  Update succeeded.
+[2020/03/05 22:05:47][INFO][post]  User logged in successfully.
+[2020/03/05 22:06:09][INFO][post]  Received post request
+[2020/03/05 22:06:09][INFO][post]  Request:
+{"email":"test5@uci.edu","plevel":4}
+[2020/03/05 22:06:09][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:06:09][INFO][getUserData]  Query succeeded.
+[2020/03/05 22:06:09][INFO][getUserData]  Email found.
+[2020/03/05 22:06:09][INFO][post]  User has insufficient privilege level.
+[2020/03/05 22:06:31][INFO][post]  Received post request
+[2020/03/05 22:06:31][INFO][post]  Request:
+{"email":"test5@uci.edu","plevel":4}
+[2020/03/05 22:06:31][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:06:31][INFO][getUserData]  Query succeeded.
+[2020/03/05 22:06:31][INFO][getUserData]  Email found.
+[2020/03/05 22:06:31][INFO][post]  User has insufficient privilege level.
+[2020/03/05 22:06:36][INFO][post]  Received post request
+[2020/03/05 22:06:36][INFO][post]  Request:
+{"email":"test5@uci.edu","plevel":4}
+[2020/03/05 22:06:36][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:06:36][INFO][getUserData]  Query succeeded.
+[2020/03/05 22:06:36][INFO][getUserData]  Email found.
+[2020/03/05 22:06:36][INFO][post]  User has insufficient privilege level.
+[2020/03/05 22:06:43][INFO][post]  Received post request
+[2020/03/05 22:06:43][INFO][post]  Request:
+{"email":"test5@uci.edu","plevel":4}
+[2020/03/05 22:06:43][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:06:43][INFO][getUserData]  Query succeeded.
+[2020/03/05 22:06:43][INFO][getUserData]  Email found.
+[2020/03/05 22:06:43][INFO][post]  User has insufficient privilege level.
+[2020/03/05 22:06:53][INFO][post]  Received post request
+[2020/03/05 22:06:53][INFO][post]  Request:
+{"email":"test5@uci.edu","plevel":4}
+[2020/03/05 22:06:53][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:06:53][INFO][getUserData]  Query succeeded.
+[2020/03/05 22:06:53][INFO][getUserData]  Email found.
+[2020/03/05 22:06:53][INFO][post]  User has insufficient privilege level.
+[2020/03/05 22:06:55][INFO][post]  Received post request
+[2020/03/05 22:06:55][INFO][post]  Request:
+{"email":"test5@uci.edu","plevel":4}
+[2020/03/05 22:06:55][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:06:55][INFO][getUserData]  Query succeeded.
+[2020/03/05 22:06:55][INFO][getUserData]  Email found.
+[2020/03/05 22:06:55][INFO][post]  User has insufficient privilege level.
+[2020/03/05 22:07:02][INFO][post]  Received post request
+[2020/03/05 22:07:02][INFO][post]  Request:
+{"email":"test5@uci.edu","plevel":4}
+[2020/03/05 22:07:02][INFO][getUserData]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM user WHERE 1=1 && email LIKE 'test5@uci.edu';
+[2020/03/05 22:07:02][INFO][getUserData]  Query succeeded.
+[2020/03/05 22:07:02][INFO][getUserData]  Email found.
+[2020/03/05 22:07:02][INFO][post]  User has insufficient privilege level.

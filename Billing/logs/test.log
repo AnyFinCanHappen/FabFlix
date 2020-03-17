@@ -1,0 +1,914 @@
+[2020/03/05 20:35:54][CONFIG][initService]  Starting service...
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Scheme: http://
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Hostname: 0.0.0.0
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Port: 8510
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Path: /api/billing/
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Logger output directory: ./logs/
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Database hostname: columbo-v5.ics.uci.edu
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Database port: 3306
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Database username: cs122bg36
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Database password provided? true
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Database name: cs122bg36
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Database driver: com.mysql.cj.jdbc.Driver
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Database connection settings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  IDM Scheme: http://
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  IDM Hostname: 0.0.0.0
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  IDM Port: 1234
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  IDM Path: /api/idm
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  IDM Privilege Path: /privilege
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Movies Scheme: http://
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Movies Hostname: 0.0.0.0
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Movies Port: 5432
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Movies Path: /api/movies
+[2020/03/05 20:35:54][CONFIG][currentConfigs]  Movies Thumbnail Path: /thumbnail
+[2020/03/05 20:35:54][CONFIG][connectToDatabase]  Connecting to database...
+[2020/03/05 20:35:54][CONFIG][connectToDatabase]  Database URL: jdbc:mysql://columbo-v5.ics.uci.edu:3306/cs122bg36?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/03/05 20:35:54][CONFIG][connectToDatabase]  Connected to database: jdbc:mysql://columbo-v5.ics.uci.edu:3306/cs122bg36?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/03/05 20:35:54][CONFIG][initHTTPServer]  Initializing HTTP server...
+[2020/03/05 20:35:54][CONFIG][initHTTPServer]  Building URI from configs...
+[2020/03/05 20:35:54][CONFIG][initHTTPServer]  Final URI: http://0.0.0.0:8510/api/billing/
+[2020/03/05 20:35:54][CONFIG][initHTTPServer]  Set Jersey resources.
+[2020/03/05 20:35:54][CONFIG][initHTTPServer]  Set Jackson as serializer.
+[2020/03/05 20:35:54][CONFIG][initHTTPServer]  Starting HTTP server...
+[2020/03/05 20:35:56][CONFIG][initHTTPServer]  HTTP server started.
+[2020/03/05 20:35:56][CONFIG][initService]  Service initialized.
+[2020/03/05 21:18:47][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:18:47][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:18:47][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:18:47][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:18:48][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:18:48][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:18:48][INFO][checkUserPLevel]  {"resultCode":141,"message":"User has insufficient privilege level."}
+[2020/03/05 21:18:48][INFO][modelMapper]  Mapping object
+[2020/03/05 21:18:48][INFO][setResultFromUserPLevel]  User has insufficient p_level.
+[2020/03/05 21:18:48][INFO][setResult]  Insufficient P_Level.
+[2020/03/05 21:18:48][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:18:48][INFO][makeResultSet]  SELECT m.movie_id 
+FROM movie_price AS m 
+WHERE 1=1 && m.movie_id = 'tt1345836';
+[2020/03/05 21:18:48][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:18:48][INFO][modifyTable]  INSERT INTO cart(email, movie_id, quantity) 
+VALUES ('sidney@uci.edu', 'tt1345836', 3);
+[2020/03/05 21:18:48][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 21:18:48][INFO][setResult]  Shopping cart item inserted successfully.
+[2020/03/05 21:18:48][INFO][buildResponse]  Response being built with Result: INSERT_CART
+[2020/03/05 21:51:45][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:51:45][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:51:45][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:51:45][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:51:45][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:51:45][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:51:45][INFO][checkUserPLevel]  {"resultCode":141,"message":"User has insufficient privilege level."}
+[2020/03/05 21:51:45][INFO][modelMapper]  Mapping object
+[2020/03/05 21:51:45][INFO][setResultFromUserPLevel]  User has insufficient p_level.
+[2020/03/05 21:51:45][INFO][setResult]  Insufficient P_Level.
+[2020/03/05 21:51:45][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:51:45][INFO][makeResultSet]  SELECT m.movie_id 
+FROM movie_price AS m 
+WHERE 1=1 && m.movie_id = 'tt1345836';
+[2020/03/05 21:51:45][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:51:45][INFO][modifyTable]  INSERT INTO cart(email, movie_id, quantity) 
+VALUES ('test3@uci.edu', 'tt1345836', 3);
+[2020/03/05 21:51:45][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 21:51:45][INFO][setResult]  Shopping cart item inserted successfully.
+[2020/03/05 21:51:45][INFO][buildResponse]  Response being built with Result: INSERT_CART
+[2020/03/05 21:52:31][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:52:31][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:52:31][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:52:31][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:52:31][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:52:31][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:52:31][INFO][checkUserPLevel]  {"resultCode":141,"message":"User has insufficient privilege level."}
+[2020/03/05 21:52:31][INFO][modelMapper]  Mapping object
+[2020/03/05 21:52:31][INFO][setResultFromUserPLevel]  User has insufficient p_level.
+[2020/03/05 21:52:31][INFO][setResult]  Insufficient P_Level.
+[2020/03/05 21:52:31][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:52:31][INFO][makeResultSet]  SELECT m.movie_id 
+FROM movie_price AS m 
+WHERE 1=1 && m.movie_id = 'tt4154796';
+[2020/03/05 21:52:31][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:52:31][INFO][modifyTable]  INSERT INTO cart(email, movie_id, quantity) 
+VALUES ('test3@uci.edu', 'tt4154796', 10);
+[2020/03/05 21:52:31][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 21:52:31][INFO][setResult]  Shopping cart item inserted successfully.
+[2020/03/05 21:52:31][INFO][buildResponse]  Response being built with Result: INSERT_CART
+[2020/03/05 21:52:37][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:52:37][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test3@uci.edu';
+[2020/03/05 21:52:37][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:52:37][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:52:37][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:52:37][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:52:37][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:52:37][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:52:37][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:52:37][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt1345836","title":"The Dark Knight Rises","backdrop_path":"/f6ljQGv7WnJuwBPty017oPWfqjx.jpg","poster_path":"/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg"},{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 21:52:37][INFO][modelMapper]  Mapping object
+[2020/03/05 21:52:37][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test3@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 21:52:37][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:52:37][INFO][updateResponse]  Size of items: 2
+[2020/03/05 21:52:37][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 21:52:37][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 21:54:01][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:54:01][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test3@uci.edu';
+[2020/03/05 21:54:01][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:54:01][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:54:01][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:54:01][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:54:01][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:54:01][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:54:01][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:54:01][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt1345836","title":"The Dark Knight Rises","backdrop_path":"/f6ljQGv7WnJuwBPty017oPWfqjx.jpg","poster_path":"/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg"},{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 21:54:01][INFO][modelMapper]  Mapping object
+[2020/03/05 21:54:01][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test3@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 21:54:01][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:54:01][INFO][updateResponse]  Size of items: 2
+[2020/03/05 21:54:01][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 21:54:01][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 21:54:21][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:54:21][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test3@uci.edu';
+[2020/03/05 21:54:21][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:54:21][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:54:21][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:54:21][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:54:21][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:54:22][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:54:22][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:54:22][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt1345836","title":"The Dark Knight Rises","backdrop_path":"/f6ljQGv7WnJuwBPty017oPWfqjx.jpg","poster_path":"/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg"},{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 21:54:22][INFO][modelMapper]  Mapping object
+[2020/03/05 21:54:22][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test3@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 21:54:22][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:54:22][INFO][updateResponse]  Size of items: 2
+[2020/03/05 21:54:22][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 21:54:22][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 21:54:40][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:54:40][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test3@uci.edu';
+[2020/03/05 21:54:40][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:54:40][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:54:40][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:54:40][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:54:40][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:54:40][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:54:40][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:54:40][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt1345836","title":"The Dark Knight Rises","backdrop_path":"/f6ljQGv7WnJuwBPty017oPWfqjx.jpg","poster_path":"/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg"},{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 21:54:40][INFO][modelMapper]  Mapping object
+[2020/03/05 21:54:40][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test3@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 21:54:40][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:54:40][INFO][updateResponse]  Size of items: 2
+[2020/03/05 21:54:40][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 21:54:40][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 21:54:59][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:54:59][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test3@uci.edu';
+[2020/03/05 21:54:59][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:54:59][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:54:59][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:54:59][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:54:59][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:54:59][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:54:59][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:54:59][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt1345836","title":"The Dark Knight Rises","backdrop_path":"/f6ljQGv7WnJuwBPty017oPWfqjx.jpg","poster_path":"/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg"},{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 21:54:59][INFO][modelMapper]  Mapping object
+[2020/03/05 21:54:59][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test3@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 21:54:59][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:54:59][INFO][updateResponse]  Size of items: 2
+[2020/03/05 21:54:59][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 21:54:59][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 21:58:40][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:58:40][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:58:40][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:58:40][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:58:40][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:58:40][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:58:40][INFO][checkUserPLevel]  {"resultCode":141,"message":"User has insufficient privilege level."}
+[2020/03/05 21:58:40][INFO][modelMapper]  Mapping object
+[2020/03/05 21:58:40][INFO][setResultFromUserPLevel]  User has insufficient p_level.
+[2020/03/05 21:58:40][INFO][setResult]  Insufficient P_Level.
+[2020/03/05 21:58:40][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:58:40][INFO][makeResultSet]  SELECT m.movie_id 
+FROM movie_price AS m 
+WHERE 1=1 && m.movie_id = 'tt1345836';
+[2020/03/05 21:58:40][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:58:40][INFO][modifyTable]  INSERT INTO cart(email, movie_id, quantity) 
+VALUES ('test4@uci.edu', 'tt1345836', 3);
+[2020/03/05 21:58:40][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 21:58:40][INFO][setResult]  Shopping cart item inserted successfully.
+[2020/03/05 21:58:40][INFO][buildResponse]  Response being built with Result: INSERT_CART
+[2020/03/05 21:59:12][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:59:12][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:59:12][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:59:12][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:59:12][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:59:12][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:59:12][INFO][checkUserPLevel]  {"resultCode":141,"message":"User has insufficient privilege level."}
+[2020/03/05 21:59:12][INFO][modelMapper]  Mapping object
+[2020/03/05 21:59:12][INFO][setResultFromUserPLevel]  User has insufficient p_level.
+[2020/03/05 21:59:12][INFO][setResult]  Insufficient P_Level.
+[2020/03/05 21:59:12][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:59:12][INFO][makeResultSet]  SELECT m.movie_id 
+FROM movie_price AS m 
+WHERE 1=1 && m.movie_id = 'tt4154796';
+[2020/03/05 21:59:12][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:59:12][INFO][modifyTable]  INSERT INTO cart(email, movie_id, quantity) 
+VALUES ('test4@uci.edu', 'tt4154796', 10);
+[2020/03/05 21:59:12][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 21:59:12][INFO][setResult]  Shopping cart item inserted successfully.
+[2020/03/05 21:59:12][INFO][buildResponse]  Response being built with Result: INSERT_CART
+[2020/03/05 21:59:18][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:59:18][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 21:59:18][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:59:18][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:59:18][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:59:18][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:59:18][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:59:18][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:59:18][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:59:18][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt1345836","title":"The Dark Knight Rises","backdrop_path":"/f6ljQGv7WnJuwBPty017oPWfqjx.jpg","poster_path":"/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg"},{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 21:59:18][INFO][modelMapper]  Mapping object
+[2020/03/05 21:59:18][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 21:59:18][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:59:18][INFO][updateResponse]  Size of items: 2
+[2020/03/05 21:59:18][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 21:59:18][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 21:59:24][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:59:24][INFO][modifyTable]  DELETE FROM cart WHERE movie_id = 'tt1345836' && email = 'test4@uci.edu';
+[2020/03/05 21:59:24][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 21:59:24][INFO][setResult]  Shopping cart item deleted successfully.
+[2020/03/05 21:59:24][INFO][buildResponse]  Response being built with Result: DELETE_CART
+[2020/03/05 21:59:26][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:59:26][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 21:59:26][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:59:26][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:59:26][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:59:26][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:59:26][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:59:26][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:59:26][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:59:26][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 21:59:26][INFO][modelMapper]  Mapping object
+[2020/03/05 21:59:26][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 21:59:26][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:59:26][INFO][updateResponse]  Size of items: 1
+[2020/03/05 21:59:26][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 21:59:26][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 21:59:36][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:59:36][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 21:59:37][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:59:37][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:59:37][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:59:37][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:59:37][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:59:37][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:59:37][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:59:37][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 21:59:37][INFO][modelMapper]  Mapping object
+[2020/03/05 21:59:37][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 21:59:37][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:59:37][INFO][updateResponse]  Size of items: 1
+[2020/03/05 21:59:37][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 21:59:37][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 21:59:47][INFO][modelMapper]  Mapping object from String
+[2020/03/05 21:59:47][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 21:59:47][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:59:47][INFO][checkUserPLevel]  Building client...
+[2020/03/05 21:59:47][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 21:59:47][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 21:59:47][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 21:59:47][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 21:59:47][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 21:59:47][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 21:59:47][INFO][modelMapper]  Mapping object
+[2020/03/05 21:59:47][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 21:59:47][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 21:59:47][INFO][updateResponse]  Size of items: 1
+[2020/03/05 21:59:47][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 21:59:47][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:00:16][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:00:16][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 22:00:16][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:00:16][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:00:16][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:00:16][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:00:16][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:00:16][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:00:16][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:00:16][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:00:16][INFO][modelMapper]  Mapping object
+[2020/03/05 22:00:16][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:00:16][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:00:16][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:00:16][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:00:16][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:01:34][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:01:34][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 22:01:34][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:01:34][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:01:34][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:01:34][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:01:34][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:01:34][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:01:34][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:01:34][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:01:34][INFO][modelMapper]  Mapping object
+[2020/03/05 22:01:34][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:01:34][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:01:34][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:01:34][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:01:34][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:02:09][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:02:09][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 22:02:09][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:02:09][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:02:09][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:02:09][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:02:09][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:02:09][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:02:09][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:02:09][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:02:09][INFO][modelMapper]  Mapping object
+[2020/03/05 22:02:09][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:02:09][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:02:09][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:02:09][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:02:09][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:03:21][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:03:21][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 22:03:21][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:03:21][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:03:21][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:03:21][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:03:21][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:03:21][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:03:21][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:03:21][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:03:21][INFO][modelMapper]  Mapping object
+[2020/03/05 22:03:21][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:03:21][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:03:21][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:03:21][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:03:21][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:03:26][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:03:26][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 22:03:26][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:03:26][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:03:26][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:03:26][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:03:26][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:03:26][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:03:26][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:03:26][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:03:26][INFO][modelMapper]  Mapping object
+[2020/03/05 22:03:26][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:03:26][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:03:26][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:03:26][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:03:26][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:04:41][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:04:41][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 22:04:41][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:04:41][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:04:41][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:04:41][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:04:41][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:04:41][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:04:41][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:04:41][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:04:41][INFO][modelMapper]  Mapping object
+[2020/03/05 22:04:41][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:04:41][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:04:41][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:04:41][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:04:41][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:04:44][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:04:44][INFO][modifyTable]  UPDATE cart 
+SET quantity = 7
+WHERE 1=1 && movie_id = 'tt4154796' && 
+email = 'test4@uci.edu';
+[2020/03/05 22:04:44][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:04:44][INFO][setResult]  Shopping cart item updated successfully.
+[2020/03/05 22:04:44][INFO][buildResponse]  Response being built with Result: UPDATE_CART
+[2020/03/05 22:04:51][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:04:51][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 22:04:51][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:04:51][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:04:51][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:04:51][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:04:51][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:04:51][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:04:51][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:04:51][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:04:51][INFO][modelMapper]  Mapping object
+[2020/03/05 22:04:51][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:04:51][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:04:51][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:04:51][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:04:51][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:05:03][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:05:03][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 22:05:03][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:05:03][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:05:03][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:05:03][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:05:03][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:05:03][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:05:03][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:05:03][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:05:03][INFO][modelMapper]  Mapping object
+[2020/03/05 22:05:03][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:05:04][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:05:04][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:05:04][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:05:04][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:05:06][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:05:06][INFO][modifyTable]  UPDATE cart 
+SET quantity = 4
+WHERE 1=1 && movie_id = 'tt4154796' && 
+email = 'test4@uci.edu';
+[2020/03/05 22:05:06][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:05:06][INFO][setResult]  Shopping cart item updated successfully.
+[2020/03/05 22:05:06][INFO][buildResponse]  Response being built with Result: UPDATE_CART
+[2020/03/05 22:05:07][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:05:07][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test4@uci.edu';
+[2020/03/05 22:05:07][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:05:07][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:05:07][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:05:07][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:05:07][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:05:07][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:05:07][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:05:07][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:05:07][INFO][modelMapper]  Mapping object
+[2020/03/05 22:05:07][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test4@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:05:07][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:05:07][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:05:07][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:05:07][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:06:43][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:06:43][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:06:43][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:06:43][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:06:43][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:06:43][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:06:43][INFO][checkUserPLevel]  {"resultCode":141,"message":"User has insufficient privilege level."}
+[2020/03/05 22:06:43][INFO][modelMapper]  Mapping object
+[2020/03/05 22:06:43][INFO][setResultFromUserPLevel]  User has insufficient p_level.
+[2020/03/05 22:06:43][INFO][setResult]  Insufficient P_Level.
+[2020/03/05 22:06:43][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:06:43][INFO][makeResultSet]  SELECT m.movie_id 
+FROM movie_price AS m 
+WHERE 1=1 && m.movie_id = 'tt1345836';
+[2020/03/05 22:06:43][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:06:43][INFO][modifyTable]  INSERT INTO cart(email, movie_id, quantity) 
+VALUES ('test5@uci.edu', 'tt1345836', 3);
+[2020/03/05 22:06:43][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:06:43][INFO][setResult]  Shopping cart item inserted successfully.
+[2020/03/05 22:06:43][INFO][buildResponse]  Response being built with Result: INSERT_CART
+[2020/03/05 22:07:02][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:07:02][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:07:02][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:07:02][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:07:02][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:07:02][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:07:02][INFO][checkUserPLevel]  {"resultCode":141,"message":"User has insufficient privilege level."}
+[2020/03/05 22:07:02][INFO][modelMapper]  Mapping object
+[2020/03/05 22:07:02][INFO][setResultFromUserPLevel]  User has insufficient p_level.
+[2020/03/05 22:07:02][INFO][setResult]  Insufficient P_Level.
+[2020/03/05 22:07:02][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:07:02][INFO][makeResultSet]  SELECT m.movie_id 
+FROM movie_price AS m 
+WHERE 1=1 && m.movie_id = 'tt4154796';
+[2020/03/05 22:07:02][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:02][INFO][modifyTable]  INSERT INTO cart(email, movie_id, quantity) 
+VALUES ('test5@uci.edu', 'tt4154796', 10);
+[2020/03/05 22:07:02][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:07:02][INFO][setResult]  Shopping cart item inserted successfully.
+[2020/03/05 22:07:02][INFO][buildResponse]  Response being built with Result: INSERT_CART
+[2020/03/05 22:07:12][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:07:12][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test5@uci.edu';
+[2020/03/05 22:07:12][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:12][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:07:12][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:07:12][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:07:12][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:07:12][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:07:12][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:07:12][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt1345836","title":"The Dark Knight Rises","backdrop_path":"/f6ljQGv7WnJuwBPty017oPWfqjx.jpg","poster_path":"/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg"},{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:07:12][INFO][modelMapper]  Mapping object
+[2020/03/05 22:07:12][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test5@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:07:12][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:12][INFO][updateResponse]  Size of items: 2
+[2020/03/05 22:07:12][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:07:12][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:07:20][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:07:20][INFO][modifyTable]  DELETE FROM cart WHERE movie_id = 'tt1345836' && email = 'test5@uci.edu';
+[2020/03/05 22:07:20][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:07:20][INFO][setResult]  Shopping cart item deleted successfully.
+[2020/03/05 22:07:20][INFO][buildResponse]  Response being built with Result: DELETE_CART
+[2020/03/05 22:07:22][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:07:22][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test5@uci.edu';
+[2020/03/05 22:07:22][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:22][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:07:22][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:07:22][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:07:22][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:07:22][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:07:22][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:07:22][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:07:22][INFO][modelMapper]  Mapping object
+[2020/03/05 22:07:22][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test5@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:07:22][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:22][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:07:22][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:07:22][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:07:31][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:07:31][INFO][modifyTable]  UPDATE cart 
+SET quantity = 20
+WHERE 1=1 && movie_id = 'tt4154796' && 
+email = 'test5@uci.edu';
+[2020/03/05 22:07:31][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:07:31][INFO][setResult]  Shopping cart item updated successfully.
+[2020/03/05 22:07:31][INFO][buildResponse]  Response being built with Result: UPDATE_CART
+[2020/03/05 22:07:33][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:07:33][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test5@uci.edu';
+[2020/03/05 22:07:33][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:33][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:07:33][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:07:33][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:07:33][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:07:33][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:07:33][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:07:33][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:07:33][INFO][modelMapper]  Mapping object
+[2020/03/05 22:07:33][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test5@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:07:33][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:33][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:07:33][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:07:33][INFO][buildResponse]  Response being built with Result: RETRIEVE_CART
+[2020/03/05 22:07:41][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:07:41][INFO][makeResultSet]  SELECT c.movie_id 
+FROM cart AS c 
+WHERE c.email = 'test5@uci.edu';
+[2020/03/05 22:07:41][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:41][INFO][checkUserPLevel]  Building client...
+[2020/03/05 22:07:41][INFO][checkUserPLevel]  Building WebTarget...
+[2020/03/05 22:07:41][INFO][checkUserPLevel]  Starting invocation builder...
+[2020/03/05 22:07:41][INFO][checkUserPLevel]  Sending request...
+[2020/03/05 22:07:41][INFO][checkUserPLevel]  Request sent.
+[2020/03/05 22:07:41][INFO][checkUserPLevel]  Received status 200
+[2020/03/05 22:07:41][INFO][checkUserPLevel]  {"thumbnails":[{"movie_id":"tt4154796","title":"Avengers: Endgame","backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg","poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg"}],"message":"Found movie(s) with search parameters.","resultCode":210}
+[2020/03/05 22:07:41][INFO][modelMapper]  Mapping object
+[2020/03/05 22:07:41][INFO][makeResultSet]  SELECT mp.unit_price, mp.discount, mp.movie_id, c.quantity 
+FROM movie_price AS mp
+INNER JOIN cart AS c
+ON c.email = 'test5@uci.edu' 
+WHERE mp.movie_id = c.movie_id;
+[2020/03/05 22:07:41][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:41][INFO][updateResponse]  Size of items: 1
+[2020/03/05 22:07:41][INFO][setResult]  Shopping cart retrieved successfully.
+[2020/03/05 22:07:43][INFO][createPayPalOrder]  Order ID: 2F0468888W352702L
+[2020/03/05 22:07:43][INFO][lambda$createPayPalOrder$0]  self => GET:https://api.sandbox.paypal.com/v2/checkout/orders/2F0468888W352702L
+[2020/03/05 22:07:43][INFO][lambda$createPayPalOrder$0]  approve => GET:https://www.sandbox.paypal.com/checkoutnow?token=2F0468888W352702L
+[2020/03/05 22:07:43][INFO][lambda$createPayPalOrder$0]  update => PATCH:https://api.sandbox.paypal.com/v2/checkout/orders/2F0468888W352702L
+[2020/03/05 22:07:43][INFO][lambda$createPayPalOrder$0]  capture => POST:https://api.sandbox.paypal.com/v2/checkout/orders/2F0468888W352702L/capture
+[2020/03/05 22:07:43][INFO][modifyTable]  INSERT INTO sale(email,movie_id, quantity, sale_date)
+VALUES('test5@uci.edu', 'tt4154796', 20, CURRENT_DATE);
+[2020/03/05 22:07:43][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:07:43][INFO][makeResultSet]  SELECT s.sale_id
+FROM sale AS s
+WHERE 1=1 && s.email = 'test5@uci.edu'&&
+      s.movie_id = 'tt4154796'&&
+      s.quantity = 20;
+[2020/03/05 22:07:43][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:43][INFO][modifyTable]  INSERT INTO transaction(sale_id, token)
+VALUES(37,'2F0468888W352702L');
+[2020/03/05 22:07:43][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:07:43][INFO][setResult]  Order placed successfully.
+[2020/03/05 22:07:43][INFO][buildResponse]  Response being built with Result: ORDER_SUCCESS
+[2020/03/05 22:07:45][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:07:45][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:45][INFO][complete]  Token Found.
+[2020/03/05 22:07:45][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"60d2f30fc17b8","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:07:45][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:07:45][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :60d2f30fc17b8
+[2020/03/05 22:07:45][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:07:45][INFO][lambda$captureOrder$3]  Content-Length :584
+[2020/03/05 22:07:45][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:07:45 GMT
+[2020/03/05 22:07:45][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:07:45][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:07:45][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:07:45][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:07:45][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:45][INFO][complete]  Token Found.
+[2020/03/05 22:07:47][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"7a8d3afff9094","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:07:47][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:07:47][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :7a8d3afff9094
+[2020/03/05 22:07:47][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:07:47][INFO][lambda$captureOrder$3]  Content-Length :584
+[2020/03/05 22:07:47][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:07:47 GMT
+[2020/03/05 22:07:47][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:07:47][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:07:47][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:07:49][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:07:49][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:49][INFO][complete]  Token Found.
+[2020/03/05 22:07:49][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"10c3377503a9d","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:07:49][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:07:49][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :10c3377503a9d
+[2020/03/05 22:07:49][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:07:49][INFO][lambda$captureOrder$3]  Content-Length :584
+[2020/03/05 22:07:49][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:07:49 GMT
+[2020/03/05 22:07:49][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:07:49][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:07:49][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:07:51][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:07:51][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:51][INFO][complete]  Token Found.
+[2020/03/05 22:07:51][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"7284336d1c2bb","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:07:51][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:07:51][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :7284336d1c2bb
+[2020/03/05 22:07:51][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:07:51][INFO][lambda$captureOrder$3]  Content-Length :584
+[2020/03/05 22:07:51][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:07:51 GMT
+[2020/03/05 22:07:51][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:07:51][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:07:51][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:07:53][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:07:53][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:53][INFO][complete]  Token Found.
+[2020/03/05 22:07:53][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"49db77d519b34","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:07:53][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:07:53][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :49db77d519b34
+[2020/03/05 22:07:53][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:07:53][INFO][lambda$captureOrder$3]  Content-Length :584
+[2020/03/05 22:07:53][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:07:53 GMT
+[2020/03/05 22:07:53][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:07:53][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:07:53][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:07:55][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:07:55][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:55][INFO][complete]  Token Found.
+[2020/03/05 22:07:55][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"89c429071c672","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:07:55][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:07:55][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :89c429071c672
+[2020/03/05 22:07:55][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:07:55][INFO][lambda$captureOrder$3]  Content-Length :584
+[2020/03/05 22:07:55][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:07:55 GMT
+[2020/03/05 22:07:55][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:07:55][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:07:55][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:07:57][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:07:57][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:57][INFO][complete]  Token Found.
+[2020/03/05 22:07:57][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"c0d01226c8be6","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:07:57][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:07:57][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :c0d01226c8be6
+[2020/03/05 22:07:57][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:07:57][INFO][lambda$captureOrder$3]  Content-Length :584
+[2020/03/05 22:07:57][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:07:56 GMT
+[2020/03/05 22:07:57][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:07:57][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:07:57][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:07:59][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:07:59][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:07:59][INFO][complete]  Token Found.
+[2020/03/05 22:07:59][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"e18d95dd26b1e","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:07:59][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:07:59][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :e18d95dd26b1e
+[2020/03/05 22:07:59][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:07:59][INFO][lambda$captureOrder$3]  Content-Length :584
+[2020/03/05 22:07:59][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:07:59 GMT
+[2020/03/05 22:07:59][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:07:59][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:07:59][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:08:01][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:08:01][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:08:01][INFO][complete]  Token Found.
+[2020/03/05 22:08:01][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"7dafd15ac8a14","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:08:01][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:08:01][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :7dafd15ac8a14
+[2020/03/05 22:08:01][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:08:01][INFO][lambda$captureOrder$3]  Content-Length :584
+[2020/03/05 22:08:01][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:08:01 GMT
+[2020/03/05 22:08:01][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:08:01][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:08:01][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:08:03][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:08:03][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:08:03][INFO][complete]  Token Found.
+[2020/03/05 22:08:03][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_NOT_APPROVED","description":"Payer has not yet approved the Order for payment. Please redirect the payer to the 'rel':'approve' url returned as part of the HATEOAS links within the Create Order call or provide a valid payment_source in the request."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"9c2572eb40b3","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_NOT_APPROVED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:08:03][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:08:03][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :9c2572eb40b3
+[2020/03/05 22:08:03][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:08:03][INFO][lambda$captureOrder$3]  Content-Length :583
+[2020/03/05 22:08:03][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:08:02 GMT
+[2020/03/05 22:08:03][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:08:03][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:08:03][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:08:04][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:08:04][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:08:04][INFO][complete]  Token Found.
+[2020/03/05 22:08:05][INFO][makeResultSet]  SELECT t.sale_id
+FROM transaction AS t
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:08:05][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:08:05][INFO][complete]  Token Found.
+[2020/03/05 22:08:07][INFO][captureOrder]  Capture ID: 2WA27340LB048393U
+[2020/03/05 22:08:07][INFO][lambda$captureOrder$2]  self => GET:https://api.sandbox.paypal.com/v2/payments/captures/2WA27340LB048393U
+[2020/03/05 22:08:07][INFO][lambda$captureOrder$2]  refund => POST:https://api.sandbox.paypal.com/v2/payments/captures/2WA27340LB048393U/refund
+[2020/03/05 22:08:07][INFO][lambda$captureOrder$2]  up => GET:https://api.sandbox.paypal.com/v2/checkout/orders/2F0468888W352702L
+[2020/03/05 22:08:07][INFO][modifyTable]  UPDATE transaction
+SET transaction.capture_id = '2WA27340LB048393U'
+WHERE transaction.token = '2F0468888W352702L';
+[2020/03/05 22:08:07][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:08:07][INFO][makeResultSet]  SELECT s.email
+FROM sale AS s
+INNER JOIN transaction t
+ON s.sale_id = t.sale_id
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:08:07][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:08:07][INFO][complete]  EMail: test5@uci.edu
+[2020/03/05 22:08:07][INFO][modifyTable]  DELETE FROM cart WHERE email = 'test5@uci.edu';
+[2020/03/05 22:08:07][INFO][modifyTable]  Query Succeeded.
+[2020/03/05 22:08:07][INFO][setResult]  Order is completed successfully.
+[2020/03/05 22:08:07][INFO][buildResponse]  Response being built with Result: ORDER_COMPLETED
+[2020/03/05 22:08:07][INFO][captureOrder]  {"name":"UNPROCESSABLE_ENTITY","details":[{"issue":"ORDER_ALREADY_CAPTURED","description":"Order already captured.If 'intent=CAPTURE' only one capture per order is allowed."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"69c76b02b6f9f","links":[{"href":"https://developer.paypal.com/docs/api/orders/v2/#error-ORDER_ALREADY_CAPTURED","rel":"information_link","method":"GET"}]}
+[2020/03/05 22:08:07][INFO][lambda$captureOrder$3]  null :HTTP/1.1 422 Unprocessable Entity
+[2020/03/05 22:08:07][INFO][lambda$captureOrder$3]  Paypal-Debug-Id :69c76b02b6f9f
+[2020/03/05 22:08:07][INFO][lambda$captureOrder$3]  Cache-Control :max-age=0, no-cache, no-store, must-revalidate
+[2020/03/05 22:08:07][INFO][lambda$captureOrder$3]  Content-Length :454
+[2020/03/05 22:08:07][INFO][lambda$captureOrder$3]  Date :Fri, 06 Mar 2020 06:08:07 GMT
+[2020/03/05 22:08:07][INFO][lambda$captureOrder$3]  Content-Type :application/json
+[2020/03/05 22:08:07][INFO][setResult]  Order can not be completed.
+[2020/03/05 22:08:07][INFO][buildResponse]  Response being built with Result: ORDER_ERROR
+[2020/03/05 22:08:13][INFO][modelMapper]  Mapping object from String
+[2020/03/05 22:08:13][INFO][makeResultSet]  SELECT t.token
+FROM transaction AS t
+INNER JOIN sale AS s
+ON s.email = 'test5@uci.edu'
+WHERE 1=1 && s.sale_id = t.sale_id;
+[2020/03/05 22:08:13][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:08:13][INFO][getOrder]  Full response body:{"update_time":"2020-03-06T06:08:06Z","create_time":"2020-03-06T06:07:43Z","purchase_units":[{"payee":{"email_address":"sb-fa43hu1052953@business.example.com","merchant_id":"JT5Z4TR2GZFAJ"},"amount":{"value":"248.60","currency_code":"USD"},"reference_id":"default","shipping":{"address":{"country_code":"US","admin_area_1":"CA","address_line_1":"1 Main St","admin_area_2":"San Jose","postal_code":"95131"},"name":{"full_name":"John Doe"}},"payments":{"captures":[{"amount":{"value":"248.60","currency_code":"USD"},"seller_protection":{"dispute_categories":["ITEM_NOT_RECEIVED","UNAUTHORIZED_TRANSACTION"],"status":"ELIGIBLE"},"update_time":"2020-03-06T06:08:06Z","create_time":"2020-03-06T06:08:06Z","final_capture":true,"seller_receivable_breakdown":{"paypal_fee":{"value":"7.51","currency_code":"USD"},"gross_amount":{"value":"248.60","currency_code":"USD"},"net_amount":{"value":"241.09","currency_code":"USD"}},"links":[{"method":"GET","rel":"self","href":"https://api.sandbox.paypal.com/v2/payments/captures/2WA27340LB048393U"},{"method":"POST","rel":"refund","href":"https://api.sandbox.paypal.com/v2/payments/captures/2WA27340LB048393U/refund"},{"method":"GET","rel":"up","href":"https://api.sandbox.paypal.com/v2/checkout/orders/2F0468888W352702L"}],"id":"2WA27340LB048393U","status":"COMPLETED"}]}}],"links":[{"method":"GET","rel":"self","href":"https://api.sandbox.paypal.com/v2/checkout/orders/2F0468888W352702L"}],"id":"2F0468888W352702L","intent":"CAPTURE","payer":{"address":{"country_code":"US"},"email_address":"sb-kt7yh1050707@personal.example.com","name":{"surname":"Doe","given_name":"John"},"payer_id":"MLVDMRFEWWYTY"},"status":"COMPLETED"}
+[2020/03/05 22:08:13][INFO][makeResultSet]  SELECT JSON_OBJECT(
+    'email', s.email,
+    'movie_id', s.movie_id,
+    'quantity', s.quantity,
+    'sale_date', s.sale_date,
+    'unit_price', m.unit_price,
+    'discount', m.discount
+           ) AS Item
+FROM sale AS s
+INNER JOIN movie_price AS m
+ON m.movie_id = s.movie_id
+INNER JOIN transaction t
+ON s.sale_id = t.sale_id
+WHERE t.token = '2F0468888W352702L';
+[2020/03/05 22:08:13][INFO][makeResultSet]  Query Succeeded.
+[2020/03/05 22:08:13][INFO][modelMapper]  Mapping object
+[2020/03/05 22:08:13][INFO][setResult]  Order retrieved successfully.
+[2020/03/05 22:08:13][INFO][buildResponse]  Response being built with Result: ORDER_RETRIEVED

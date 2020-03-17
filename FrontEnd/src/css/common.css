@@ -1,0 +1,134 @@
+.input {
+  display: flex;
+
+  padding: 7px;
+
+  border-style: none;
+  border-radius: 3px;
+  width: 600px;
+
+  font-size: 18px;
+  box-shadow: inset 0px 0px 5px -2px #000000;
+  background-color: #f5f5f5;
+}
+
+.label {
+  margin: 20px 0px 2px 0px;
+  display: flex;
+  font-size: 23px;
+}
+
+.label_half {
+  margin: 10px 0px 2px 0px;
+  display: flex;
+  font-size: 23px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 25px;
+  width: 125px;
+  padding: 10px;
+  border-radius: 3px;
+  border-style: none;
+
+  font-size: 20px;
+  color: var(--detail-font-color);
+  text-decoration: none;
+
+  background-color: var(--detail-color);
+  box-shadow: inset 0px 0px 5px -2px #000000;
+}
+
+.buttonWhite {
+  display:flex;
+  float:left;
+  margin-top: 25px;
+  width: 120px;
+  padding: 10px;
+  border-radius: 3px;
+  border-style: none;
+
+  font-size: 15px;
+  color: #000000;
+  text-decoration: none;
+
+  background-color: #ffffff;
+  box-shadow: inset 0px 0px 5px -2px #000000;
+}
+
+
+.buttonRight {
+  display: flex;
+  float: right;
+
+  margin-top: 25px;
+  width: 125px;
+  padding: 10px;
+  border-radius: 3px;
+  border-style: none;
+
+  font-size: 15px;
+  color: var(--detail-font-color);
+  text-decoration: none;
+
+  background-color: var(--detail-color);
+  box-shadow: inset 0px 0px 5px -2px #000000;
+}
+
+.buttonBottonLeft{
+  position: absolute;
+  left: 25%;
+
+  margin-top: 25px;
+  width: 125px;
+  padding: 10px;
+  border-radius: 3px;
+  border-style: none;
+
+  font-size: 15px;
+  color: var(--detail-font-color);
+  text-decoration: none;
+
+  background-color: var(--detail-color);
+  box-shadow: inset 0px 0px 5px -2px #ffffff;
+}
+
+.buttonBottonRight{
+  position: absolute;
+  right: 30%;
+
+  margin-top: 25px;
+  width: 125px;
+  padding: 10px;
+  border-radius: 3px;
+  border-style: none;
+
+  font-size: 15px;
+  color: var(--detail-font-color);
+  text-decoration: none;
+
+  background-color: var(--detail-color);
+  box-shadow: inset 0px 0px 5px -2px #ffffff;
+}
+
+.right{
+  position: absolute;
+  right: 40%
+}
+
+.left{
+  position: absolute;
+  left: 40%;
+}
+
+.movieDetail
+{
+  background-color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--font-color);
+  margin: 0;
+  padding: 0;
+}

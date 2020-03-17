@@ -1,0 +1,18 @@
+.container {
+    columns: 2 auto;
+  }
+
+.columnLeft {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    float: left;
+} 
+.columnRight{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    float: right;
+}

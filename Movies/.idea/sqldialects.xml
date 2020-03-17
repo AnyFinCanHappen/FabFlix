@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/db_scripts/gender.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db_scripts/genre.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db_scripts/genre_in_movie.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db_scripts/keyword.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db_scripts/keyword_in_movie.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db_scripts/movie.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db_scripts/person-1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db_scripts/person-2.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db_scripts/person-3.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db_scripts/person_in_movie.sql" dialect="MySQL" />
+  </component>
+</project>

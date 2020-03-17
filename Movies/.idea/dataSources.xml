@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="cs122bg36@colin-baker-v3.ics.uci.edu" uuid="bb192a68-3d08-49b5-b8b5-bf92e48aab82">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>Movie Database</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://colin-baker-v3.ics.uci.edu:3306/cs122bg36</jdbc-url>
+    </data-source>
+  </component>
+</project>

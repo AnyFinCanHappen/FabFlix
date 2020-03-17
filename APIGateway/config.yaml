@@ -1,0 +1,68 @@
+serviceConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 12345
+  path: /api/g
+
+loggerConfig:
+  outputDir: ./logs/
+  outputFile: gateway.log
+
+databaseConfig:
+  dbUsername: cs122bg36
+  dbPassword: u7Neri2zMgPx.
+  dbHostname: adrian-monk-v10.ics.uci.edu
+  dbPort: 3306
+  dbDriver: com.mysql.cj.jdbc.Driver
+  dbName: cs122bg36
+  dbSettings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+
+threadConfig:
+  numThreads: 10
+  requestDelay: 5
+
+idmConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 1234
+  path: /api/idm
+
+idmEndpoints:
+  register: /register
+  login: /login
+  session: /session
+  privilege: /privilege
+
+moviesConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 5432
+  path: /api/movies
+
+moviesEndpoints:
+  search: /search
+  browse: /browse/
+  get: /get/
+  thumbnail: /thumbnail
+  people: /people
+  peopleSearch: /people/search
+  peopleGet: /people/get/
+  
+billingConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 8510
+  path: /api/billing
+  
+billingEndpoints:
+  cartInsert: /cart/insert
+  cartUpdate: /cart/update
+  cartDelete: /cart/delete
+  cartRetrieve: /cart/retrieve
+  cartClear: /cart/clear
+  orderPlace: /order/place
+  orderRetrieve: /order/retrieve
+  orderComplete: /order/complete
+
+
+
