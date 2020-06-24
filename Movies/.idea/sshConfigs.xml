@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="openlab.ics.uci.edu" id="f687fb0a-6135-45cc-850a-75cd6fd6886b" nameFormat="DESCRIPTIVE" username="sidneyjt" />
+    </configs>
+  </component>
+</project>
