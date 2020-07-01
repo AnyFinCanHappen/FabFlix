@@ -1,11 +1,11 @@
 ## FabFlix A Buy/Search moves webapp.
-###Backend: 
+### Backend: 
 Java
-###Frontend: 
+### Frontend: 
 React, JQuery, AJAX, CSS, HTML, Javascript
-###Database: 
+### Database: 
 MySQL, JDBC
-###Intermediate
+### Intermediate
 JSON
-###Tools: 
+### Tools: 
 Gradle, Postman, Grizzly,linux
