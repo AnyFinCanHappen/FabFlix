@@ -1,3 +1,7 @@
+## Check out the reworked version of FabFlix
+Repository link:\
+[https://github.com/AnyFinCanHappen/FabFlix_Updated]
+
 ## FabFlix A Buy/Search moves webapp.
 ### Backend: 
 Java
